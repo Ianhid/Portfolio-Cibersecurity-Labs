@@ -1,7 +1,5 @@
 # Portfolio-Cybersecurity-Labs
 
-Proyectos personales de ciberseguridad realizados durante el Curso de Especialización en Ciberseguridad en Entornos de las Tecnologías de la Información (CETI) y mi formación en ASIR.
-
 ## Sobre mí
 Soy Ian Hidalgo, técnico en ciberseguridad y administración de sistemas junior. Actualmente estoy preparando la certificación CompTIA Security+. Además, también me interesa el campo de la inteligencia artificial, tengo cierta experiencia en automatización con IA para proyectos personales, aunque este repo se centra exclusivamente en ciberseguridad.
 
