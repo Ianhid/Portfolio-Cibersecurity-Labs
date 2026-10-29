@@ -102,11 +102,11 @@ Se observa tráfico SMB entre la víctima y `10[.]7[.]2[.]8` con numerosos error
 
 ![Tráfico SMB con errores](img/13-smb-errores.png)
 
-**Limitación:** Suricata no etiqueta este tráfico como EternalBlue, solo como SMB mal formado. Con el pcap no puedo confirmar que el exploit funcionara ni identificar el payload. Lo trato como un **intento de explotación probable**. Para confirmarlo habría que inspeccionar los paquetes SMB (peticiones `Trans2` con tamaños anómalos y shellcode) o contrastar con reglas específicas de EternalBlue.
+**Limitación:** Suricata no etiqueta este tráfico como EternalBlue, solo como SMB mal formado. Con el pcap no puedo confirmar que el exploit funcionara ni identificar el payload. Lo trato como un intento de explotación probable. Para confirmarlo habría que inspeccionar los paquetes SMB o contrastar con reglas específicas de EternalBlue.
 
 ## Clasificación
 
-Infección por **Trickbot** (troyano bancario y cargador de malware) con un intento de movimiento lateral. El vector de entrada más probable es el **phishing**, según el malspam y el documento con macro asociados al ejercicio.
+Infección por **Trickbot** (troyano bancario y cargador de malware) con un intento de movimiento lateral. El vector de entrada más probable es el phising.
 
 **Mapeo a MITRE ATT&CK** (propuesto):
 
