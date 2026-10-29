@@ -3,7 +3,7 @@
 Proyectos relacionados con la ciberseguridad destacables que he realizado en diferentes ámbitos de esta misma.
 
 ## Sobre mí
-Soy Ian Hidalgo, técnico en ciberseguridad y administración de sistemas junior. Actualmente estoy preparando la certificación CompTIA Security+. Además, también me interesa el campo de la inteligencia artificial, tengo cierta experiencia en automatización con IA para proyectos personales, aunque este repo se centra exclusivamente en ciberseguridad.
+Soy Ian Hidalgo, técnico en ciberseguridad y administración de sistemas junior. Actualmente estoy preparando la certificación CompTIA Security+. También me interesa el campo de la inteligencia artificial, tengo cierta experiencia en automatización con IA para proyectos personales, aunque este repo se centra exclusivamente en ciberseguridad.
 
 - LinkedIn: https://www.linkedin.com/in/ian-hidalgo-garc%C3%ADa-2f3/
 
