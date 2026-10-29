@@ -3,7 +3,7 @@
 Proyectos personales de ciberseguridad realizados durante el Curso de Especialización en Ciberseguridad en Entornos de las Tecnologías de la Información (CETI) y mi formación en ASIR.
 
 ## Sobre mí
-Soy Ian Hidalgo, técnico en ciberseguridad y administración de sistemas junior. Me interesan el blue team y el SOC, la administración de sistemas y la automatización con IA. Actualmente estoy preparando la certificación CompTIA Security+.
+Soy Ian Hidalgo, técnico en ciberseguridad y administración de sistemas junior. Actualmente estoy preparando la certificación CompTIA Security+. Además, también me interesa el campo de la inteligencia artificial, tengo cierta experiencia en automatización con IA para proyectos personales, aunque este repo se centra exclusivamente en ciberseguridad.
 
 - LinkedIn: https://www.linkedin.com/in/ian-hidalgo-garc%C3%ADa-2f3/
 
