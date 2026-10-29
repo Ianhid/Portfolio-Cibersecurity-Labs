@@ -126,13 +126,6 @@ Infección por **Trickbot** (troyano bancario y cargador de malware) con un inte
 
 ## Qué aprendí y qué mejoraría
 
-- Suricata sirve para localizar rápido lo importante, y Wireshark para confirmar los detalles. Combinar `jq` y filtros de Wireshark por IP me ahorró mucho tiempo.
+- Este proyecto me ayudó a comprender lo útil y potente que es la herramienta Wireshark y como se puede aplicar a casos reales, que es la parte más interesante. También me ayudó a comprender la importancia de las campañas de simulación de phising en las empresas.
 - La parte más difícil fue decidir qué mirar en Wireshark, y entender que una alerta no equivale a una conclusión: el caso de EternalBlue es un ejemplo.
-- Mejoras posibles: extraer el ejecutable del pcap y analizarlo en un entorno aislado, escribir una regla propia para el patrón de POST de Trickbot y automatizar la extracción de IOCs con un script.
-
-## Fuentes
-
-- [Malware-Traffic-Analysis.net](https://www.malware-traffic-analysis.net/)
-- [INCIBE: Trickbot](https://www.incibe.es/ciudadania/servicio-antibotnet/info/trickBot)
-- [Avast: EternalBlue](https://www.avast.com/es-es/c-eternalblue)
-- Google Gemini, como apoyo para entender los conceptos.
+- Mejoras posibles: escribir una regla propia para el patrón de POST de Trickbot y automatizar la extracción de IOCs con un script.
