@@ -1,6 +1,6 @@
 # Análisis de una infección por Trickbot con Suricata y Wireshark
 
-**Resumen:** analicé una captura de tráfico real de una infección por el troyano Trickbot (julio de 2018). Con Suricata detecté las alertas y extraje los IOCs, y con Wireshark confirmé cada fase del ataque: descarga del malware, envío de información robada al servidor de mando y control, e intento de propagación a otro equipo de la red por SMB.
+**Resumen:** analicé una captura de tráfico real de una infección por el troyano Trickbot (julio de 2018). Con Suricata detecté las alertas y extraje los IOCs, y con Wireshark confirmé cada fase del ataque: descarga del malware, envío de información robada, e intento de propagación a otro equipo de la red por SMB.
 
 ## Contexto
 
