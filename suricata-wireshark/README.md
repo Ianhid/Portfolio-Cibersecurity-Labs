@@ -43,7 +43,7 @@ Suricata generó alertas de dos tipos: las de **Trickbot** (descarga, check-in y
 
 ### IOCs
 
-Direcciones y dominios "defanged" (con `[.]`) para que no se abran por error.
+Direcciones y dominios (con `[.]`) para que no se abran por error.
 
 | Tipo | Valor | Qué es |
 |---|---|---|
