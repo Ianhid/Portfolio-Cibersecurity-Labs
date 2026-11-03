@@ -6,7 +6,7 @@
 
 - **Origen del pcap:** ejercicio `2018-07-02 - Trickbot infection` de [Malware-Traffic-Analysis.net](https://www.malware-traffic-analysis.net/). La página incluye también el correo de malspam y un documento Word con macro, lo que apunta a que la infección empezó con un correo de phishing. El pcap solo contiene el tráfico de red posterior.
 - **Objetivo:** reconstruir qué hizo el malware, cuándo y contra quién, y proponer medidas de contención.
-- **Entorno:** Kali Linux, Suricata (con reglas Emerging Threats), `jq` y Wireshark.
+- **Entorno:** Kali Linux, Suricata, `jq` y Wireshark.
 
 ![Origen del pcap](img/00-origen-pcap.png)
 
