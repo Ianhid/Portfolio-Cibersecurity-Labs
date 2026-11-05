@@ -226,9 +226,6 @@ Al terminar el análisis, repetí la verificación de **SHA-256** del volcado pa
 
 ![Verificación SHA-256 final, idéntica a la inicial](img/34-sha256sum-verificacion-final.png)
 
-### Limitaciones
-
-- El informe dice que el atacante **pudo** exfiltrar `EMPLOY~1.XLS`. Sin tráfico de red, la memoria por sí sola no confirma que saliera del equipo.
 
 ## 4. Complemento: imagen de disco con FTK Imager
 
