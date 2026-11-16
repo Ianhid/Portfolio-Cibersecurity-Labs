@@ -70,7 +70,7 @@ Flujo completo:
 
 ## Identificación del incidente (hallazgo principal)
 
-- **Qué:** panel de administración phpMyAdmin expuesto en el puerto 80, con el usuario `root` sin contraseña.
+- Panel de administración phpMyAdmin expuesto en el puerto 80, con el usuario `root` sin contraseña.
 - **Impacto:** acceso completo a la base de datos, con posibilidad de leer, modificar o borrar datos, provocar una denegación de servicio o usarlo como punto de partida para escalar privilegios en el sistema.
 
 ## Mitigación
@@ -84,9 +84,3 @@ Flujo completo:
 - Nuclei es muy rápido para validar hallazgos conocidos (CVE) y también para detectar configuraciones inseguras propias con una plantilla a medida.
 - n8n resultó más intuitivo de lo que esperaba para encadenar los datos de un escáner hasta un informe legible.
 - **Mejora pendiente:** terminar el nodo de exportación a disco (o sustituirlo por un envío por correo o un webhook) para que el informe llegue a alguna parte de forma automática.
-
-## Fuentes
-
-- [Nuclei](https://github.com/projectdiscovery/nuclei)
-- [Nuclei templates](https://github.com/projectdiscovery/nuclei-templates)
-- Documento guiado proporcionado por el profesor
