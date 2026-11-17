@@ -5,8 +5,8 @@
 ## Contexto
 
 - **Objetivo:** entender, desde el lado ofensivo, qué hace un atacante después de entrar en un sistema, para poder detectarlo y revertirlo desde el lado defensivo.
-- **Entorno:** máquinas virtuales propias y aisladas (Kali como atacante; Ubuntu y Windows como víctimas), sin conexión a redes reales. Los tres ejercicios comparten módulo (Hacking Ético) y unidad (UT4 – Post-explotación).
-- **Por qué sin comandos:** los pasos exactos de persistencia y de shells inversas son, literalmente, código de intrusión. Lo documento a nivel de técnica (qué se hizo y cómo se detecta/revierte), no como procedimiento reproducible.
+- **Entorno:** máquinas virtuales propias y aisladas (Kali como atacante; Ubuntu y Windows como víctimas), sin conexión a redes reales.
+- **Por qué sin comandos:** los pasos exactos de persistencia y de shells inversas son, literalmente, código de intrusión, no quiero dejarlo reflejado aquí.
 - **Sobre las capturas:** incluyo solo las que muestran reconocimiento (quién soy, qué hay en la red) y evidencia de la vulnerabilidad explotada (una mala configuración de `sudo`), que es justo lo que un blue teamer revisaría. No hay capturas de los comandos de persistencia, shells inversas ni exfiltración.
 
 ## Resumen de los tres ejercicios
