@@ -185,8 +185,3 @@ y en el lado atacante recuperé el fichero completo con las credenciales generad
 - Practicar varios mecanismos de persistencia a la vez ayuda a entender que ninguno es "el" indicador: hay que vigilar varias superficies (claves SSH, cuentas, cron, tareas programadas, ficheros de inicio) porque un atacante suele dejar más de una puerta abierta.
 - La parte de Windows fue la que más cambió mi forma de pensar: ocultar una ventana o usar flags de *bypass* no es lo mismo que no dejar rastro, y exfiltrar datos no requiere ninguna herramienta "de hacker": las propias clases de red de PowerShell bastan para sacar un fichero.
 - **Pendiente:** en el ejercicio B no llegué a documentar con capturas la parte de antiforénsica (fechas de ficheros, historial), solo a nivel descriptivo; sería la siguiente mejora natural, junto con centralizar los logs de las tres máquinas en un único punto para practicar la detección, no solo el ataque.
-
-## Fuentes
-
-- [MITRE ATT&CK](https://attack.mitre.org/)
-- Documentación de clase del módulo de Hacking Ético (CETI)
