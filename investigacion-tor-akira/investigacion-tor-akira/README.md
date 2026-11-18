@@ -66,9 +66,3 @@ El resto de enlaces `.onion` encontrados en otras fuentes (WatchGuard, RansomLoo
 - **Respuesta:** tener copias de seguridad offline e inmutables, porque con doble extorsión pagar el rescate no garantiza que los datos robados no se publiquen igualmente.
 - **Inteligencia:** monitorizar fuentes de threat intel (feeds de ransomware, MITRE ATT&CK) para detectar pronto si la organización aparece listada como víctima.
 
-## Qué aprendí y qué mejoraría
-
-- Investigar en Tor sin exponerse exige preparación previa: firewall restrictivo, VPN y no interactuar más allá de lo necesario para documentar.
-- Me quedé con ganas de investigar más grupos y de contrastar más fuentes, pero el tiempo de la práctica fue limitado.
-- **Mejora pendiente:** ampliar la investigación a otros grupos de ransomware activos y comparar sus modelos de negocio y técnicas.
-
