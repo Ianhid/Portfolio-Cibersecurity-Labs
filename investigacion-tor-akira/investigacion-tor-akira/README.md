@@ -1,20 +1,19 @@
 # Investigación de threat intelligence: el grupo de ransomware Akira en Tor
 
-**Resumen:** configuré un entorno de análisis con geolocalización en Wireshark (MaxMind) y Tor, y lo usé para investigar en fuentes abiertas al grupo de ransomware **Akira**: su modelo de negocio (RaaS), sus tácticas y su sitio de extorsión en la red Tor.
+**Resumen:** Investigación en fuentes abiertas al grupo de ransomware **Akira**: su modelo de negocio (RaaS), sus tácticas y su sitio de extorsión en la red Tor.
 
 ## Contexto
 
 - **Objetivo:** practicar OSINT e investigación de amenazas sobre un grupo de ransomware activo, usando fuentes públicas y la propia red Tor como canal de comunicación de los atacantes.
-- **Entorno:** Kali Linux, firewall `ufw`, MaxMind GeoLite2 + Wireshark, navegador Tor, ProtonVPN.
+- **Entorno:** Kali Linux, firewall `ufw`, navegador Tor, ProtonVPN.
 - **Por qué este montaje:** antes de navegar por Tor conviene reducir la superficie expuesta: firewall restrictivo con registro de eventos, salida de tráfico solo por las interfaces de la VPN y el propio Tor, y una VPN como capa adicional.
 
 ## Metodología
 
 1. Configurar `ufw` en modo restrictivo (denegar por defecto entrada y salida) y permitir solo el tráfico de las interfaces de ProtonVPN y Tor, con logging activado.
-2. Instalar las bases de datos GeoLite2 de MaxMind en Wireshark para poder geolocalizar IPs en capturas de tráfico.
-3. Instalar el navegador Tor y ProtonVPN como capas de anonimato para la investigación.
-4. Buscar en fuentes de threat intelligence (WatchGuard Threat Lab y similares) el perfil del grupo y sus enlaces `.onion` activos.
-5. Acceder únicamente a la terminal pública de Akira para documentar su funcionamiento, sin descargar ni distribuir ningún dato.
+2. Instalar el navegador Tor y ProtonVPN como capas de anonimato para la investigación.
+3. Buscar en fuentes de threat intelligence (WatchGuard Threat Lab y similares) el perfil del grupo y sus enlaces `.onion` activos.
+4. Acceder únicamente a la terminal pública de Akira para documentar su funcionamiento, sin descargar ni distribuir ningún dato.
 
 ## Perfil del grupo: Akira
 
