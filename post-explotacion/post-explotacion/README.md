@@ -1,6 +1,6 @@
 # Post-explotación: acceso, escalada, persistencia y pivoting (laboratorio)
 
-**Resumen:** en tres ejercicios de laboratorio practiqué el ciclo completo de post-explotación sobre máquinas Linux y Windows propias y aisladas: obtener acceso inicial, escalar privilegios, instalar varios mecanismos de persistencia, exfiltrar credenciales, moverme lateralmente a otra máquina de la red y, finalmente, revertir todos los cambios. Documento aquí qué hice, con capturas de los pasos reales, y por qué, mapeado a MITRE ATT&CK — el objetivo de un portfolio de blue team es entender el ataque con el detalle suficiente para poder detectarlo y revertirlo.
+**Resumen:** en dos ejercicios de laboratorio practiqué el ciclo completo de post-explotación sobre máquinas Linux y Windows propias y aisladas: obtener acceso inicial, escalar privilegios, instalar varios mecanismos de persistencia, exfiltrar credenciales, moverme lateralmente a otra máquina de la red y, finalmente, revertir todos los cambios. Documento aquí qué hice, con capturas de los pasos reales, y por qué, mapeado a MITRE ATT&CK — el objetivo de un portfolio de blue team es entender el ataque con el detalle suficiente para poder detectarlo y revertirlo.
 
 ## Contexto
 
@@ -15,7 +15,6 @@
 |---|---|---|---|
 | A. Linux (Ubuntu) | Ubuntu Server | Credenciales débiles por SSH | Cuatro mecanismos de persistencia distintos y pivoting hacia una máquina Windows interna |
 | B. Linux (Ubuntu, variante) | Ubuntu Server | Credenciales obtenidas cifrando un fichero capturado con fuerza bruta, tras aprovechar un servicio FTP mal asegurado | Escalada por una shell con permisos sudo mal configurados; antiforénsica |
-| C. Windows | Windows (vía acceso remoto ya autorizado en el laboratorio) | — | Herramienta propia para crear una cuenta backdoor, instalar persistencia, exfiltrar credenciales y pivotar a un servidor interno |
 
 ## A. Linux: acceso, persistencia y pivoting a una red interna
 
@@ -104,57 +103,8 @@ Repetí la creación de una cuenta discreta (UID de sistema, sin contraseña, en
 
 **Lo que esto enseña de cara a detección:** las fechas de modificación de ficheros del sistema y el historial de comandos son señales manipulables, así que no deben ser la única fuente de verdad; los logs centralizados (enviados a un servidor aparte, no solo guardados en la propia máquina) son mucho más fiables porque un atacante con acceso local no puede alterarlos retroactivamente.
 
-## C. Windows: herramienta propia de post-explotación y exfiltración
 
-A partir de un acceso remoto ya autorizado para la práctica, subí a la máquina objetivo una herramienta propia en PowerShell (`Ian_Invoke-PostOps.ps1`) con varias funciones de post-explotación:
-
-![Acceso remoto ya autorizado y herramienta propia subida al objetivo](img/18-acceso-ssh-autorizado-windows.png)
-
-![El script y sus complementos de persistencia ya en el equipo objetivo](img/19-script-subido-dir.png)
-
-**Creación de una cuenta backdoor.** Ejecuté la función que crea un usuario local, le genera contraseñas aleatorias y guarda el registro de la operación en un fichero de "botín" (`loot.csv`):
-
-![Ejecución del script: crea la cuenta backdoor y guarda credenciales](img/20-ejecucion-crear-backdoor.png)
-
-**Persistencia.** Un segundo script instala una tarea programada (`UpdaterTask`) que relanza un tercer script (`updater.ps1`) de forma recurrente:
-
-![Instalación de la tarea programada de persistencia](img/21-instalar-tarea-programada.png)
-
-Lo ejecuté con `-WindowStyle Hidden` para que no se viera ninguna ventana al dispararse:
-
-![Ejecución oculta del script de persistencia](img/22-ejecucion-oculta-updater.png)
-
-y, con un listener esperando en mi máquina atacante, recibí una sesión interactiva de PowerShell completa:
-
-![Shell inversa de PowerShell recibida en el listener](img/23-shell-inversa-recibida.png)
-
-**Exfiltración de credenciales.** Desde esa sesión, usé directamente las clases de red de .NET (`TcpClient`) para enviar el contenido de `loot.csv` por un socket hacia mi máquina, sin depender de ninguna herramienta externa:
-
-![Código para exfiltrar loot.csv mediante un socket TCP](img/24-exfiltracion-codigo-tcpclient.png)
-
-y en el lado atacante recuperé el fichero completo con las credenciales generadas:
-
-![Fichero loot.csv recibido con las credenciales exfiltradas](img/25-exfiltracion-recibida.png)
-
-**Pivoting.** Monté un túnel SSH a través de la máquina Windows para llegar a un servidor web interno protegido por un WAF (ModSecurity), al que no tenía acceso directo:
-
-![Túnel SSH para alcanzar un servidor interno protegido por WAF](img/26-pivot-tunel-waf.png)
-
-![Página del servidor interno, alcanzada a través del túnel](img/27-pagina-servidor-waf.png)
-
-**Reversión.** Al terminar, ejecuté el script de desinstalación: eliminé la tarea programada, la cuenta backdoor y el fichero `loot.csv`, y cerré los túneles abiertos.
-
-![Eliminación remota de la cuenta backdoor y la tarea programada](img/28-reversion-eliminar-persistencia.png)
-
-**Reflexión OPSEC (la parte con más valor para un SOC):**
-
-- Los comandos ejecutados por PowerShell quedan registrados en los registros de **PowerShell Operational** y **Script Block Logging**, incluso si el atacante usa `-ExecutionPolicy Bypass` para saltarse restricciones de ejecución: el log sigue viendo el contenido del script.
-- `-WindowStyle Hidden` oculta la ventana, no el evento: sigue generando entradas en los registros de Windows.
-- Una tarea programada creada para persistencia queda registrada en el **Programador de tareas** y en el **Visor de eventos**, visible para cualquier administrador que revise el sistema.
-- La exfiltración por un socket TCP en claro, sin cifrar y hacia un puerto poco habitual, es exactamente el tipo de tráfico saliente que un EDR o un firewall con inspección de salida debería marcar como anómalo.
-- En un pentest profesional **no se deben borrar los logs**: hacerlo puede disparar alarmas de seguridad (hay sistemas que monitorizan precisamente la limpieza de logs), destruye la evidencia que el cliente necesita para entender el alcance real del incidente, y compromete la integridad de cualquier investigación forense posterior. El objetivo de un pentest es demostrar impacto, no borrar pruebas — por eso la reversión al final fue explícita y documentada, no un borrado de huellas a mitad de la prueba.
-
-## Clasificación (MITRE ATT&CK, conjunto de los tres ejercicios)
+## Clasificación MITRE ATT&CK
 
 | Táctica | Técnica |
 |---|---|
@@ -165,9 +115,8 @@ y en el lado atacante recuperé el fichero completo con las credenciales generad
 | Defense Evasion | T1564.003 Hide Artifacts: Hidden Window · T1070 Indicator Removal (antiforénsica básica en el ejercicio B) |
 | Descubrimiento | T1087 Account Discovery · T1082 System Information Discovery · T1046 Network Service Scanning |
 | Ingress Tool Transfer | T1105 (subida de la herramienta propia de PowerShell al objetivo) |
-| Recolección | T1005 Data from Local System (credenciales guardadas en `loot.csv`) |
 | Exfiltración | T1048.003 Exfiltration Over Unencrypted Non-C2 Protocol (socket TCP en claro hacia el listener) |
-| Movimiento lateral / Pivoting | T1572 Protocol Tunneling (túnel SSH en los ejercicios A y C) |
+| Movimiento lateral / Pivoting | T1572 Protocol Tunneling |
 
 ## Mitigación (aplicable a los tres ejercicios)
 
