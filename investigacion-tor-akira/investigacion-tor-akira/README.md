@@ -72,10 +72,3 @@ El resto de enlaces `.onion` encontrados en otras fuentes (WatchGuard, RansomLoo
 - Me quedé con ganas de investigar más grupos y de contrastar más fuentes, pero el tiempo de la práctica fue limitado.
 - **Mejora pendiente:** ampliar la investigación a otros grupos de ransomware activos y comparar sus modelos de negocio y técnicas.
 
-## Fuentes
-
-- WatchGuard Threat Lab (ficha del grupo Akira)
-- [MaxMind Database Paths en Wireshark](https://www.geeksforgeeks.org/ethical-hacking/maxmind-database-paths-in-wireshark/)
-- [Vectra AI: Akira](https://es.vectra.ai/modern-attack/threat-actors/akira)
-- [Ransomware Help: Akira](https://www.ransomwarehelp.com/es/tipos-de-ransomware/ransomware-akira/)
-- [cybersecuritynews.es: Akira y Microsoft 365](https://cybersecuritynews.es/el-ransomware-akira-y-los-ataques-a-microsoft-365-entre-las-principales-amenazas/)
