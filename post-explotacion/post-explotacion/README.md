@@ -118,7 +118,7 @@ Repetí la creación de una cuenta discreta (UID de sistema, sin contraseña, en
 | Exfiltración | T1048.003 Exfiltration Over Unencrypted Non-C2 Protocol (socket TCP en claro hacia el listener) |
 | Movimiento lateral / Pivoting | T1572 Protocol Tunneling |
 
-## Mitigación (aplicable a los tres ejercicios)
+## Mitigación
 
 - **Acceso inicial:** políticas de contraseñas robustas, MFA en accesos remotos, bloqueo tras intentos fallidos (Fail2ban o similar) y autenticación solo por clave en SSH.
 - **Escalada de privilegios:** principio de mínimo privilegio en `sudoers` — nunca `NOPASSWD` sobre intérpretes de comandos o editores — y auditoría periódica de esos permisos.
