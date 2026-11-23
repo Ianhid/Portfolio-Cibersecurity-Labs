@@ -9,7 +9,8 @@ Soy Ian Hidalgo, técnico en ciberseguridad y administración de sistemas junior
 
 ## Proyectos
 
-| Proyecto | Qué demuestra | Estado |
+| Proyecto | Qué demuestra |
+|---|---|
 | [Suricata + Wireshark: análisis de Trickbot y EternalBlue](suricata-wireshark/) | Análisis de un pcap real, IOCs, línea temporal y mitigación |
 | [Forense de memoria: cadena de custodia, LiME/AVML y Volatility](forense-memoria/) | Adquisición y análisis de memoria RAM de un equipo comprometido |
 | [MQTT seguro: TLS, mTLS y HMAC + ataque MITM](mqtt-seguro/) | Hardening por fases de un broker MQTT y ataque Man-in-the-Middle |
