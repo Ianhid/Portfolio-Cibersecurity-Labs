@@ -10,13 +10,12 @@ Soy Ian Hidalgo, técnico en ciberseguridad y administración de sistemas junior
 ## Proyectos
 
 | Proyecto | Qué demuestra | Estado |
-|---|---|---|
-| [Suricata + Wireshark: análisis de Trickbot y EternalBlue](suricata-wireshark/) | Análisis de un pcap real, IOCs, línea temporal y mitigación | Publicado |
-| [Forense de memoria: cadena de custodia, LiME/AVML y Volatility](forense-memoria/) | Adquisición y análisis de memoria RAM de un equipo comprometido | Próximamente |
-| [MQTT seguro: TLS, mTLS y HMAC + ataque MITM](mqtt-seguro/) | Hardening por fases de un broker MQTT y ataque Man-in-the-Middle | Próximamente |
-| [Post-explotación en Linux y Windows](post-explotacion/) | Persistencia, escalada, logs, mitigación y mapeo MITRE ATT&CK | Próximamente |
-| [Investigación de ciberataque con Tor (Akira)](investigacion-tor-akira/) | Inteligencia de amenazas sobre un grupo de ransomware real | Próximamente |
-| [Nuclei + n8n: escaneo y alertas automatizadas](nuclei-n8n/) | Automatización de escaneo de vulnerabilidades con alertas | Próximamente |
+| [Suricata + Wireshark: análisis de Trickbot y EternalBlue](suricata-wireshark/) | Análisis de un pcap real, IOCs, línea temporal y mitigación |
+| [Forense de memoria: cadena de custodia, LiME/AVML y Volatility](forense-memoria/) | Adquisición y análisis de memoria RAM de un equipo comprometido |
+| [MQTT seguro: TLS, mTLS y HMAC + ataque MITM](mqtt-seguro/) | Hardening por fases de un broker MQTT y ataque Man-in-the-Middle |
+| [Post-explotación en Linux y Windows](post-explotacion/) | Persistencia, escalada, logs, mitigación y mapeo MITRE ATT&CK |
+| [Investigación de ciberataque con Tor (Akira)](investigacion-tor-akira/) | Inteligencia de amenazas sobre un grupo de ransomware real |
+| [Nuclei + n8n: escaneo y alertas automatizadas](nuclei-n8n/) | Automatización de escaneo de vulnerabilidades con alertas |
 
 ## Aviso
 Todos los laboratorios se han realizado en entornos propios y controlados, con fines formativos.
