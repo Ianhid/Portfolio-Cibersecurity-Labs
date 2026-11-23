@@ -1,6 +1,6 @@
 # MQTT seguro: de "sin autenticación" a mTLS + HMAC, y por qué importa
 
-**Resumen:** trabajo en grupo (con una compañera en el CETI) sobre seguridad en MQTT, el protocolo de mensajería que usan la mayoría de dispositivos IoT. Primero investigué implementaciones reales y mal configuradas de MQTT en Burgos (Shodan, mapas públicos), y después monté un broker Mosquitto entre dos Raspberry Pi en cuatro configuraciones progresivas — desde sin autenticación hasta con certificados mutuos y firma de mensajes — para comprobar en la práctica qué aporta cada capa de seguridad y qué sigue sin cubrir ninguna de ellas por sí sola.
+**Resumen:** trabajo en grupo (con una compañera en el CETI) sobre seguridad en MQTT, el protocolo de mensajería que usan la mayoría de dispositivos IoT. Primero investigamos implementaciones reales y mal configuradas de MQTT en Burgos (Shodan, mapas públicos), y después montamos un broker Mosquitto entre dos Raspberry Pi en cuatro configuraciones progresivas — desde sin autenticación hasta con certificados mutuos y firma de mensajes — para comprobar en la práctica qué aporta cada capa de seguridad y qué sigue sin cubrir ninguna de ellas por sí sola. En cuanto a la división de tareas, mi compañera realizó la investigación y documentación de las implementaciones reales en Burgos, yo me encargué de la documentación del caso práctico y el caso práctico lo realizamos completamente entre los dos. Es importante aclarar que los scripts utilizados posteriormente los realizamos con IA, no fueron programados por nosotros.
 
 ## Contexto
 
@@ -240,11 +240,3 @@ Esto es exactamente lo que TLS (cifra el canal, así que el proxy no podría ni 
 - MQTT, igual que muchos protocolos IoT, nace priorizando el bajo consumo de recursos sobre la seguridad — por eso ninguna de sus protecciones viene activada por defecto, y un broker "recién instalado" es, en la práctica, un broker abierto.
 - Las capas se complementan, no se sustituyen: la autenticación dice quién puede hablar, TLS protege que nadie más escuche o manipule el canal, y el HMAC protege el contenido del mensaje en sí, incluso si alguien ya está dentro de la conversación. Quitar cualquiera de las tres deja un hueco real, como demostró el MITM.
 - Con una búsqueda abierta en Shodan y un mapa público encontramos, sin ninguna intrusión, un dispositivo real de infraestructura municipal en Burgos expuesto por topics MQTT sin autenticar — el riesgo de dejar un broker por defecto no es hipotético.
-- **Pendiente:** no llegamos a medir el coste de rendimiento real de añadir las cuatro capas juntas (TLS + mTLS + HMAC) bajo carga, solo en reposo; sería la siguiente pregunta natural para un entorno con muchos dispositivos publicando a la vez.
-
-## Fuentes
-
-- [mqtt.org](https://mqtt.org/) · [mosquitto.org](https://mosquitto.org/)
-- [PandoraFMS — Qué es MQTT](https://pandorafms.com/es/it-topics/que-es-mqtt/)
-- [Mapa de Meshtastic España](https://mapa.meshtastic.es/)
-- [Shodan](https://www.shodan.io/)
