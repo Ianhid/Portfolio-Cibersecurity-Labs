@@ -1,6 +1,6 @@
 # MQTT seguro: de "sin autenticación" a mTLS + HMAC, y por qué importa
 
-**Resumen:** trabajo en grupo (con Mara Ruiz Montes) sobre seguridad en MQTT, el protocolo de mensajería que usan la mayoría de dispositivos IoT. Primero investigué implementaciones reales y mal configuradas de MQTT en Burgos (Shodan, mapas públicos), y después monté un broker Mosquitto entre dos Raspberry Pi en cuatro configuraciones progresivas — desde sin autenticación hasta con certificados mutuos y firma de mensajes — para comprobar en la práctica qué aporta cada capa de seguridad y qué sigue sin cubrir ninguna de ellas por sí sola.
+**Resumen:** trabajo en grupo (con una compañera en el CETI) sobre seguridad en MQTT, el protocolo de mensajería que usan la mayoría de dispositivos IoT. Primero investigué implementaciones reales y mal configuradas de MQTT en Burgos (Shodan, mapas públicos), y después monté un broker Mosquitto entre dos Raspberry Pi en cuatro configuraciones progresivas — desde sin autenticación hasta con certificados mutuos y firma de mensajes — para comprobar en la práctica qué aporta cada capa de seguridad y qué sigue sin cubrir ninguna de ellas por sí sola.
 
 ## Contexto
 
